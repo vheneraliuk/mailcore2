@@ -14,6 +14,7 @@ build_git_ios()
   versions_path="$scriptpath/deps-versions.plist"
   version="`defaults read "$versions_path" "$name" 2>/dev/null`"
   version="$(($version+1))"
+  build_for_external=1
   if test x$build_for_external = x1 ; then
     version=0
   fi

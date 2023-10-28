@@ -7,7 +7,7 @@ build_git_ios()
   fi
 
   simarchs="x86_64"
-  sdkminversion="7.0"
+  sdkminversion="11"
   sdkversion="`xcodebuild -showsdks 2>/dev/null | grep iphoneos | sed 's/.*iphoneos\(.*\)/\1/'`"
   devicearchs="arm64"
 
@@ -41,6 +41,7 @@ build_git_ios()
 
   pushd . >/dev/null
 
+  NOBITCODE="true"
 
   BITCODE_FLAGS="-fembed-bitcode"
   if test "x$NOBITCODE" != x ; then

@@ -48,7 +48,7 @@ build_git_ios()
      BITCODE_FLAGS=""
      XCODE_BITCODE_FLAGS="ENABLE_BITCODE=NO"
   fi
-  XCTOOL_OTHERFLAGS='$(inherited)'
+  XCTOOL_OTHERFLAGS='$(inherited) -lsasl2'
   XCTOOL_OTHERFLAGS="$XCTOOL_OTHERFLAGS $BITCODE_FLAGS"
   cd "$TOPDIR/build-mac"
   sdk="iphoneos$sdkversion"
